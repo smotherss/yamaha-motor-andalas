@@ -1,0 +1,7 @@
+# Brosur Yamaha Andalas - GitHub Pages (static only)
+# Jangan upload data internal dealer ke repo publik
+*.xlsx
+*.xls
+index.php
+Thumbs.db
+.DS_Store
