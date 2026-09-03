@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yamaha | Produk Resmi</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&family=Bebas+Neue&family=Righteous&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0e2a63;--red:#e30613;--bg:#f4f5f7;--card:#fff;--text:#141824;--muted:#6c7280;--line:#e5e7eb;--shadow:0 8px 32px rgba(16,30,70,.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+/* top bar removed */
+.header{background:#fff;position:sticky;top:0;z-index:90;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.header__inner{max-width:1280px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand__logo{line-height:1}
+.brand__logo b{font-family:'Barlow Condensed',sans-serif;font-size:32px;letter-spacing:.5px;color:var(--red);font-weight:700}
+.brand__logo small{display:block;font-size:10px;letter-spacing:3px;color:#0e2a63;font-weight:700;margin-top:-4px;font-style:italic}
+.brand__sep{width:1px;height:34px;background:var(--line)}
+.dealer-info{line-height:1.1}
+.dealer-name{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;color:#0e2a63;letter-spacing:2px;display:flex;align-items:baseline;gap:6px;text-transform:uppercase;line-height:1}
+.dealer-name span{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;letter-spacing:2px;color:#e30613;line-height:1}
+.dealer-sub{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#6b7280;margin-top:2px;text-transform:uppercase}
+.promo-strip{background:linear-gradient(90deg,#e30613,#ff3b30);color:#fff;text-align:center;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:.4px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;box-shadow:0 2px 8px rgba(227,6,19,.25)}
+.promo-strip b{background:#fff;color:#e30613;padding:2px 8px;border-radius:999px;font-size:11px;letter-spacing:.5px}
+.promo-strip a{background:#0e2a63;color:#fff;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px;white-space:nowrap}
+.promo-strip a:hover{background:#162d6b}
+.bonus-strip{max-width:1280px;margin:12px auto 0;padding:0 20px}
+.bonus-strip{max-width:1280px;margin:14px auto 0;padding:0 20px}
+.bonus-box{background:linear-gradient(135deg,#0e2a63 0%,#1e3a8a 60%,#e30613 100%);color:#fff;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 6px 20px rgba(14,42,99,.18);position:relative;overflow:hidden}
+.bonus-box::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 88% 50%,rgba(255,255,255,.09),transparent 58%);pointer-events:none}
+.bonus-box h4,.bonus-chips,.bonus-row,.bonus-delivery{position:relative;z-index:1}
+.bonus-box h4{font-size:12.5px;font-weight:800;letter-spacing:.4px;line-height:1.4;margin:0}
+.bonus-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;width:100%}
+.bonus-chips{display:flex;flex-wrap:wrap;gap:7px;flex:1 1 auto;align-items:center}
+.bonus-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11px;font-weight:700;padding:6px 10px;border-radius:999px;backdrop-filter:blur(4px);line-height:1;white-space:nowrap}
+.bonus-chip svg{flex-shrink:0;opacity:.95}
+.bonus-chip.free{background:#fff;color:#0e2a63;border-color:#fff}
+.bonus-delivery{margin-left:auto;background:#fff;color:#0e2a63;font-size:11px;font-weight:800;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.12);flex-shrink:0}
+@media(max-width:640px){.bonus-box{padding:14px 16px}.bonus-row{flex-direction:column;align-items:stretch}.bonus-delivery{margin-left:0;align-self:flex-start}}
+.dealer-badge{font-size:10px;font-weight:700;letter-spacing:.6px;background:#eef2ff;color:#0e2a63;border:1px solid #dbe1ff;padding:3px 8px;border-radius:999px}
+.dealer-wa{font-size:12px;font-weight:600;color:#0e2a63;display:flex;align-items:center;gap:6px;margin-top:3px;text-decoration:none}
+.dealer-wa:hover{color:#162d6b}
+.wa-icon{width:18px;height:18px;border-radius:50%;background:#25d366;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.brand__name{font-weight:800;letter-spacing:4px;font-size:15px;color:#0e2a63}
+.mainnav{display:flex;gap:26px;align-items:center}
+.mainnav a{font-size:12.5px;font-weight:700;letter-spacing:.6px;color:#22305a}
+.mainnav a:hover{color:var(--blue)}
+.page-title{max-width:1280px;margin:0 auto;padding:28px 20px 8px;text-align:center}
+.page-title h1{font-size:22px;font-weight:800;letter-spacing:.2px;color:#1a2035}
+.page-title p{font-size:12px;color:#8a8f9a;margin-top:4px;letter-spacing:.3px}
+.cat-icon-row{max-width:1280px;margin:6px auto 10px;padding:0 20px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;border-bottom:1px solid #e8eaef;padding-bottom:14px}
+.cat-icon-row button{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;color:#6b7280;font-size:11px;font-weight:600;letter-spacing:.5px}
+.cat-icon-row button.active{color:var(--blue)}
+.cat-icon-row .ico{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;font-size:16px}
+.cat-icon-row button.active .ico{background:var(--blue);color:#fff;border-color:var(--blue)}
+.filters{max-width:1280px;margin:10px auto 0;padding:0 20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.fbtn{padding:7px 14px;border-radius:999px;border:1px solid #d9dce3;background:#fff;font-size:12px;font-weight:600;color:#5b6070;cursor:pointer}
+.fbtn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.fbtn:hover{border-color:var(--blue);color:var(--blue)}
+.fbtn.active:hover{color:#fff}
+.prog-info{max-width:1280px;margin:14px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:860px){.prog-info{grid-template-columns:1fr}}
+.prog-card{background:#fff;border:1px solid #e8ecf0;border-radius:14px;padding:14px 16px;box-shadow:0 4px 16px rgba(16,30,70,.05);position:relative;overflow:hidden}
+.prog-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.prog-card.c36::before{background:linear-gradient(90deg,#0e2a63,#1e4db7)}
+.prog-card.c35::before{background:linear-gradient(90deg,#0ea5e9,#06b6d4)}
+.prog-card.cb1g10::before{background:linear-gradient(90deg,#e30613,#f59e0b)}
+.prog-card h4{font-size:12px;font-weight:800;color:#0e2a63;display:flex;align-items:center;gap:8px;letter-spacing:.2px}
+.prog-card h4 i{width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-style:normal;font-weight:800;flex-shrink:0}
+.prog-card.c36 h4 i{background:#0e2a63}
+.prog-card.c35 h4 i{background:#0ea5e9}
+.prog-card.cb1g10 h4 i{background:#e30613}
+.prog-card .tenor{font-size:10px;font-weight:700;color:#6b7280;background:#f4f6f9;border:1px solid #eef0f4;padding:2px 7px;border-radius:999px;letter-spacing:.3px;margin-left:auto}
+.prog-card p{font-size:11.5px;line-height:1.6;color:#4b5563;margin-top:8px}
+.prog-card .prog-foot{margin-top:9px;font-size:11px;font-weight:600;color:#0e2a63;background:#f4f6ff;border:1px dashed #dbe1ff;border-radius:9px;padding:7px 9px;line-height:1.45}
+.prog-card .prog-foot b{color:#0e2a63}
+.wrap{max-width:1280px;margin:0 auto;padding:18px 20px 40px}
+.cat-head{margin:26px 0 14px;display:flex;align-items:center;gap:12px}
+.cat-head img{height:34px;object-fit:contain}
+.cat-head h2{font-size:13px;letter-spacing:2px;font-weight:800;color:#0e2a63;text-transform:uppercase}
+.cat-head h2 span{font-weight:400;color:#8a8f9a;letter-spacing:.3px;text-transform:none;font-size:12px;margin-left:8px}
+.divider{height:1px;background:#e8eaef;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.header__inner{flex-wrap:wrap}.mainnav{gap:14px;flex-wrap:wrap}}
+.card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eef0f4;position:relative;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(16,30,70,.12)}
+.card__img{height:210px;background:#fff;display:flex;align-items:center;justify-content:center;padding:18px 14px 8px;position:relative}
+.card__img img{max-height:170px;max-width:92%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,0,0,.06));transition:transform .3s}
+.card:hover .card__img img{transform:scale(1.03)}
+.card__body{padding:14px 18px 18px;flex:1;display:flex;flex-direction:column}
+.card__name{font-size:16px;font-weight:800;color:#141c2f}
+.card__spec{margin-top:4px;font-size:11px;color:#6b7280;letter-spacing:.2px}
+.card__otr{margin-top:10px;font-size:11px;color:#8a8f9a}
+.card__price{margin-top:2px;font-size:18px;font-weight:800;color:#141c2f}
+.card__meta{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.card__dp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.card__dp-item{background:linear-gradient(135deg,#f8f9ff 0%,#ffffff 100%);border:1px solid #e8ecf5;border-radius:10px;padding:8px 6px;text-align:center;box-shadow:0 1px 0 rgba(14,42,99,.04)}
+.card__dp-label{font-size:9px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#6b7280}
+.card__dp-value{font-size:13px;font-weight:800;color:#0e2a63;margin-top:3px;letter-spacing:.1px}
+.card__dp-value span{font-size:10px;font-weight:600;color:#6b7280}
+@media(max-width:480px){.card__dp{grid-template-columns:1fr 1fr;gap:6px}
+.card__dp-item{padding:6px 4px}
+.card__dp-value{font-size:12px}
+.card__dp-label{font-size:8px}}
+.pill{font-size:10px;font-weight:700;letter-spacing:.4px;padding:4px 8px;border-radius:999px;background:#f1f3f6;color:#5b6070;border:1px solid #e5e7eb}
+.pill.hot{background:#eef2ff;color:#3142a6;border-color:#dbe1ff}
+.card__foot{margin-top:14px;display:flex;justify-content:flex-end}
+.btn-details{background:var(--blue);color:#fff;border:none;padding:9px 18px;border-radius:999px 0 0 999px;font-size:12px;font-weight:700;letter-spacing:.3px;cursor:pointer;box-shadow:0 4px 12px rgba(14,42,99,.18)}
+.btn-details:hover{background:#0b2050}
+.badge-cat{position:absolute;top:12px;left:12px;font-size:10px;font-weight:800;letter-spacing:.6px;padding:5px 9px;border-radius:999px;color:#fff}
+.badge-maxi{background:#0e2a63}
+.badge-classy{background:#7c3aed}
+.badge-matic{background:#0ea5e9}
+.head-search{display:flex;align-items:center;gap:6px;background:#f8f9fb;border:1px solid #e8ecf0;border-radius:999px;padding:4px 8px;box-shadow:0 1px 0 rgba(0,0,0,.03);transition:all .25s ease}
+.head-search:focus-within{background:#fff;border-color:#0e2a63;box-shadow:0 2px 8px rgba(14,42,99,.12)}
+.head-search input{border:none;outline:none;background:transparent;font-size:13px;width:200px;padding:5px 8px;color:#1a2035;font-weight:500}
+.head-search input::placeholder{color:#9aa0b0}
+.head-search button{width:32px;height:32px;border-radius:50%;border:none;background:linear-gradient(135deg,#0e2a63,#1e3a8a);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s ease;box-shadow:0 2px 6px rgba(14,42,99,.18)}
+.head-search button:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(14,42,99,.25)}
+.head-search button:active{transform:scale(0.98)}
+.sidebar{display:none !important;/* removed */} .sidebar_old{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:80;background:var(--blue);border-radius:18px 0 0 18px;overflow:hidden;box-shadow:0 10px 30px rgba(14,42,99,.25);width:72px}
+.side-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 6px;color:#dbe4ff;font-size:10px;font-weight:600;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.08)}
+.side-item em{font-style:normal;font-size:16px;line-height:1}
+.side-item:hover{background:rgba(255,255,255,.06);color:#fff}
+.side-item.active{background:#0b2050;color:#fff}
+.dealers-float{position:fixed;right:18px;bottom:18px;z-index:81;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.dealers-float .wa-float{position:static}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:81;background:#fff;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.15);display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid #e5e7eb}
+.wa-float i{width:44px;height:44px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800;box-shadow:0 2px 8px rgba(37,211,102,.35)}
+.wa-float b{font-size:13.5px;line-height:1.25;color:#1a2035}
+.wa-float span{font-size:11.5px;color:#6b7280;font-weight:700}
+.overlay{position:fixed;inset:0;background:rgba(13,18,36,.55);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+.overlay.show{display:flex}
+.modal{background:#fff;width:100%;max-width:920px;max-height:88vh;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal__head{padding:16px 18px;border-bottom:1px solid #eef0f4;display:flex;justify-content:space-between;align-items:center}
+.modal__head h3{font-size:16px;font-weight:800;color:#0e2a63}
+.modal__close{width:36px;height:36px;border-radius:50%;border:1px solid #e5e7eb;background:#f8f9fb;cursor:pointer}
+.modal__body{overflow:auto;padding:0}
+.vtabs{display:flex;gap:8px;padding:12px 14px;background:#f8f9fb;border-bottom:1px solid #eef0f4;overflow:auto;flex-wrap:wrap}
+.vtab{padding:10px 16px;border:1px solid #d9dce3;background:#fff;font-size:13px;font-weight:700;color:#3a4155;cursor:pointer;white-space:nowrap;border-radius:999px;transition:all .2s;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.vtab small{display:block;font-weight:600;color:#6b7280;font-size:11px;margin-top:2px}
+.vtab:hover{border-color:#0e2a63;color:#0e2a63;transform:translateY(-1px)}
+.vtab.active{color:#fff;background:#0e2a63;border-color:#0e2a63;box-shadow:0 4px 12px rgba(14,42,99,.18)}
+.vtab.active small{color:#cbd5ff}
+.vpane{display:none;padding:18px}
+.vpane.active{display:block}
+.vhead{display:flex;gap:16px;align-items:center;margin-bottom:14px;flex-wrap:wrap;background:linear-gradient(135deg,#f8f9ff 0%,#ffffff 100%);border:1px solid #eef0f4;border-radius:14px;padding:12px}
+.vhead img{width:240px;max-width:100%;height:150px;object-fit:contain;background:#fff;border-radius:12px;padding:10px;border:1px solid #eef0f4;box-shadow:0 4px 16px rgba(14,42,99,.06)}
+.pricebox{background:linear-gradient(135deg,#0e2a63,#1e3a8a);color:#fff;border-radius:12px;padding:12px 16px;min-width:200px}
+.pricebox small{opacity:.8;font-size:11px;letter-spacing:.5px}
+.pricebox b{font-size:21px;letter-spacing:.2px;display:block;margin-top:4px}
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.ptab{padding:7px 12px;border-radius:999px;border:1px solid #d9dce3;background:#fff;font-size:12px;font-weight:700;color:#5b6070;cursor:pointer}
+.ptab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.ppane{display:none}
+.ppane.active{display:block}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -2px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid #eef0f4;border-radius:10px;overflow:hidden;min-width:360px}
+.tbl th{background:#f4f6f9;color:#5b6070;text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.5px;text-transform:uppercase}
+.tbl td{padding:10px 12px;border-top:1px solid #eef0f4}
+.tbl tr:hover td{background:#f8f9ff}
+.hl{font-weight:800;color:var(--blue)}
+@media(max-width:640px){.tbl{font-size:12px}
+.tbl th,.tbl td{padding:8px 8px;font-size:11px;white-space:nowrap}}
+.color-dots{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.color-dot{width:20px;height:20px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #e5e7eb,0 1px 4px rgba(0,0,0,.12);cursor:pointer;position:relative;transition:transform .15s,box-shadow .15s}
+.color-dot.light{box-shadow:0 0 0 1px #d1d5db,0 1px 4px rgba(0,0,0,.1)}
+.color-dot:hover{transform:scale(1.15)}
+.color-dot.active{box-shadow:0 0 0 2px var(--blue),0 2px 8px rgba(14,42,99,.18);transform:scale(1.08)}
+.badge-moped{background:#111827}
+.wa-claim{display:inline-flex;align-items:center;gap:4px;margin-top:4px;background:linear-gradient(135deg,#e30613,#ff3b30);color:#fff;font-size:10px;font-weight:800;letter-spacing:.5px;padding:5px 10px;border-radius:999px;box-shadow:0 2px 8px rgba(227,6,19,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.wa-float--stack{flex-direction:column;align-items:stretch;padding:10px 12px 10px 10px;border-radius:18px;gap:6px}
+.wa-float__row{display:flex;align-items:center;gap:10px}
+.wa-float__claim{align-self:stretch;text-align:center;justify-content:center}
+.color-modal-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 0}
+.color-modal-item{display:flex;align-items:center;gap:6px;background:#f8f9fb;border:1px solid #eef0f4;border-radius:999px;padding:4px 9px 4px 4px;font-size:11px;font-weight:600;color:#374151;cursor:pointer;transition:all .15s}
+.color-modal-item:hover{border-color:var(--blue);transform:translateY(-1px)}
+.color-modal-item.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.color-modal-item i{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.08);flex-shrink:0;display:inline-block}
+.cat-icon-row .ico{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:all .2s}
+.cat-icon-row .ico img{width:26px;height:26px;object-fit:contain;filter:grayscale(1) opacity(.7);transition:all .2s}
+.cat-icon-row button.active .ico{background:var(--blue);border-color:var(--blue)}
+.cat-icon-row button.active .ico img{filter:brightness(0) invert(1);}
+.prog-explain{font-size:11.5px;line-height:1.55;color:#374151;background:#f8f9ff;border:1px solid #e8ecf0;border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.prog-explain b{color:#0e2a63}
+.note{font-size:11px;color:#8a8f9a;margin-top:8px;text-align:center}
+.empty{padding:24px;text-align:center;color:#8a8f9a}
+.footer{background:#0e2a63;color:#cbd5f5;text-align:center;padding:28px 18px;margin-top:10px}
+.footer b{color:#fff;letter-spacing:3px}
+</style>
+</head>
+<body>
+
+<div class="promo-strip">🔥 <b>PROMO HANYA DISINI</b> — Cukup <span style="background:#ffe600;color:#0e2a63;padding:2px 8px;border-radius:999px;font-weight:900;letter-spacing:.5px">Foto KTP dan KK</span> — Tak Perlu Pulang Ambil Berkas! Bonus Lengkap + Subsidi DP Jutaan! <a href="https://wa.me/6289629925568?text=Halo%20Yamaha%20Andalas%20mau%20klaim%20promo%20HANYA%20DISINI%20cukup%20foto%20KTP%20dan%20KK" target="_blank">Klaim Sekarang →</a></div>
+<header class="header">
+  <div class="header__inner">
+    <div class="brand">
+      <img src="https://www.yamaha-motor.co.id/web_new/shared/image/logo-sepeda-motor-yamaha-indonesia.png" alt="Yamaha" style="height:42px;object-fit:contain">
+      <div class="brand__sep"></div>
+      <div class="dealer-info">
+        <div class="dealer-name">YAMAHA <span>ANDALAS</span></div>
+        <div class="dealer-sub">Dealer Resmi Yamaha • Sumatera Barat</div>
+      </div>
+    </div>
+    <nav class="mainnav">
+      <a href="#" style="color:#0e2a63;border-bottom:2px solid #0e2a63;padding-bottom:2px">PRODUCTS</a>
+      <div class="head-search">
+        <input id="headSearch" type="text" placeholder="Cari model motor..." oninput="onHeadSearch(this.value)">
+        <button onclick="onHeadSearch(document.getElementById('headSearch').value)" aria-label="Cari">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="page-title"><h1>🔥 PROMO HANYA DISINI — Registrasi Dapatkan Harga Spesial!</h1><p>Katalog Resmi Yamaha Andalas • Harga Transparan & Program Cicilan Terbaik • Daftar via brosur ini untuk klaim bonus eksklusif</p></div>
+
+<div class="cat-icon-row" id="catIcons">
+  <button class="active" onclick="filterCat('all',this)"><span class="ico">▦</span>All</button>
+  <button onclick="filterCat('maxi',this)"><span class="ico"><img src="https://www.yamaha-motor.co.id/web_new/common/header/image/icon6.png" alt="MAXi"></span>MAXi</button>
+  <button onclick="filterCat('classy',this)"><span class="ico"><img src="https://www.yamaha-motor.co.id/web_new/common/header/image/icon7.png" alt="Classy"></span>Classy</button>
+  <button onclick="filterCat('matic',this)"><span class="ico"><img src="https://www.yamaha-motor.co.id/web_new/common/header/image/icon1.png" alt="Matic"></span>Matic</button>
+  <button onclick="filterCat('moped',this)"><span class="ico"><img src="https://www.yamaha-motor.co.id/web_new/common/header/image/icon4.png" alt="Moped"></span>Moped</button>
+</div>
+
+<div class="filters">
+  <button class="fbtn active" onclick="filterProg('all',this)">Semua Program</button>
+  <button class="fbtn" onclick="filterProg('36',this)">Hemat 36 Bulan</button>
+  <button class="fbtn" onclick="filterProg('35',this)">Hemat 35 Bulan</button>
+  <button class="fbtn" onclick="filterProg('b1g10',this)">Bayar 1 Gratis 10</button>
+</div>
+
+<div class="prog-info">
+  <div class="prog-card c36">
+    <h4><i>36</i> Hemat 36 Bulan <span class="tenor">36x cicilan</span></h4>
+    <p>Cicilan tetap selama <b>36 bulan (3 tahun)</b> dengan angsuran paling ringan per bulan. Cocok buat kamu yang mau bayar santai jangka panjang.</p>
+    <div class="prog-foot">✅ Angsuran tetap & ringan &middot; Tenor 36 bulan &middot; DP mulai 1 jutaan</div>
+  </div>
+  <div class="prog-card c35">
+    <h4><i>35</i> Hemat 35 Bulan <span class="tenor">35x cicilan</span></h4>
+    <p>Cicilan tetap selama <b>35 bulan</b> dengan pilihan DP fleksibel — <b>makin besar DP, makin kecil angsuran</b> bulanannya. Cocok untuk motor kelas menengah-atas.</p>
+    <div class="prog-foot">✅ DP fleksibel &middot; Tenor 35 bulan &middot; Ideal MAXi & Classy</div>
+  </div>
+  <div class="prog-card cb1g10">
+    <h4><i>1</i> Bayar 1 Gratis 10 <span class="tenor">DP + 1x → sisa 24 bln</span></h4>
+    <p><b>Bayar DP + 1x angsuran di awal</b>, sisanya tinggal dicicil <b>24 bulan aja</b> (bukan 35/36 bulan). Total masa cicilan jadi lebih pendek dan lebih cepat lunas.</p>
+    <div class="prog-foot">✅ Lunas lebih cepat &middot; Hemat total tenor &middot; Bayar 1x di awal setara 10 bulan</div>
+  </div>
+</div>
+
+<div class="bonus-strip">
+  <div class="bonus-box">
+    <h4>🎁 BONUS EKSKLUSIF PROMO HANYA DISINI — <span style="background:#ffe600;color:#0e2a63;padding:2px 8px;border-radius:999px">CUKUP FOTO KTP dan KK!</span></h4>
+    <div class="bonus-row">
+      <div class="bonus-chips">
+        <span class="bonus-chip">⛑ Helm</span>
+        <span class="bonus-chip">🧥 Jaket</span>
+        <span class="bonus-chip">🧥 Mantel</span>
+        <span class="bonus-chip">🩹 P3K</span>
+        <span class="bonus-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="7"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path></svg> Cairan Tubeless</span>
+        <span class="bonus-chip">☂ Payung</span>
+        <span class="bonus-chip">👕 Baju</span>
+      </div>
+      <span class="bonus-delivery">🚚 Bisa Diantar Se-Sumatera Barat</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="wrap"></div>
+
+<div class="dealers-float" id="dealersFloat">
+  <div class="wa-float wa-float--stack">
+    <a class="wa-float__row" href="https://wa.me/6289629925568?text=Halo%20Yamaha%20Andalas%20mau%20klaim%20promo%20brosur" target="_blank" style="text-decoration:none;color:inherit">
+      <i><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28" style="display:block"></i>
+      <b>Alfi Rahmat Kurniawan<br><span>0896 2992 5568 · Dealer 1</span></b>
+    </a>
+    <a class="wa-claim wa-float__claim" href="https://wa.me/6289629925568?text=Halo%20mau%20klaim%20promo%20brosur%20Yamaha%20Andalas%20(motor%20+%20bonus%20helm%20jaket%20dll)" target="_blank">🎁 KLAIM PROMO SEKARANG</a>
+  </div>
+  <div class="wa-float wa-float--stack">
+    <a class="wa-float__row" href="https://wa.me/6281365823313?text=Halo%20Yamaha%20Andalas%20mau%20klaim%20promo%20brosur" target="_blank" style="text-decoration:none;color:inherit">
+      <i><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="28" height="28" style="display:block"></i>
+      <b>Rando Syahputra<br><span>0813 6582 3313 · Dealer 2</span></b>
+    </a>
+    <a class="wa-claim wa-float__claim" href="https://wa.me/6281365823313?text=Halo%20mau%20klaim%20promo%20brosur%20Yamaha%20Andalas%20(motor%20+%20bonus%20helm%20jaket%20dll)" target="_blank">🎁 KLAIM PROMO SEKARANG</a>
+  </div>
+</div>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal__head"><h3 id="mTitle">Detail</h3><button class="modal__close" onclick="closeModal()">✕</button></div><div class="modal__body" id="mBody"></div></div></div>
+
+<footer class="footer"><div style="margin-top:1px;font-size:12px;opacity:.9">Katalog Motor Yamaha - Sumatera Barat - Padang</div><div style="margin-top:8px;font-size:11px;opacity:.7">Harga dapat berubah sewaktu-waktu. Hubungi dealer resmi untuk cek ketersediaan & promo.</div><div style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);font-size:12px;opacity:.85">Web Created by <b>Rahul</b> — <a href="https://wa.me/6285762108912" target="_blank" style="color:#fff;text-decoration:underline;font-weight:700">0857 6210 8912 </h4></a></div></footer>
+
+<script>
+const BASE='https://www.yamaha-motor.co.id';
+const MODELS=[
+ // MATIC — Mio M3 125 (warna+img resmi yamaha-motor.co.id/product/mio-m3/)
+ {id:'mio',name:'Mio M3 125',cat:'matic',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911283817688W57116.png',spec:'Matic \u2022 125cc \u2022 Blue Core',colors:[{name:'Metallic Cyan',hex:'#008b8b',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911283817688W57116.png'},{name:'Metallic White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911302918364Q25138.png'},{name:'Metallic Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911290160771I39257.png'},{name:'Metallic Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911292554271E73676.png'}],variants:[{name:'CW',otr:19300000,colors:[{name:'Metallic Cyan',hex:'#008b8b',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911283817688W57116.png'},{name:'Metallic White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911302918364Q25138.png'},{name:'Metallic Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911290160771I39257.png'},{name:'Metallic Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911292554271E73676.png'}],programs:{'36':{rows:[{dp:1000000,angs:740000}]}}}]},
+ // MATIC — Gear Ultima (yamaha-motor.co.id/product/gear-ultima/) — merek Gear Ultima, tipe Hybrid/Hybrid Solid/Hybrid Smart
+ {id:'gear-ultima',name:'Gear Ultima',cat:'matic',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210355699153B34831.png',spec:'Matic \u2022 125cc \u2022 Hybrid',colors:[{name:'Magma Black',hex:'#2c2324',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210281363446A2951.png'},{name:'Matte Blue',hex:'#1f3e65',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210285549459N49815.png'},{name:'Solid Orange',hex:'#c43f12',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210302746779S97325.png'},{name:'Solid Blue',hex:'#2172ca',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210304321568W76344.png'},{name:'Putih',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210355699153B34831.png'},{name:'Hitam',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210362244135P20329.png'}],variants:[
+   {name:'Hybrid',otr:21550000,colors:[{name:'Putih',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210355699153B34831.png'},{name:'Hitam',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210362244135P20329.png'}],programs:{'36':{rows:[{dp:1100000,angs:957000}]}}},
+   {name:'Hybrid Solid',otr:21970000,colors:[{name:'Solid Orange',hex:'#c43f12',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210302746779S97325.png'},{name:'Solid Blue',hex:'#2172ca',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210304321568W76344.png'}],programs:{'36':{rows:[{dp:1100000,angs:977000}]}}},
+   {name:'Hybrid Smart',otr:24375000,colors:[{name:'Magma Black',hex:'#2c2324',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210281363446A2951.png'},{name:'Matte Blue',hex:'#1f3e65',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210285549459N49815.png'}],programs:{'36':{rows:[{dp:1500000,angs:1067000}]}}}
+ ]},
+  // CLASSY — Fazzio (yamaha-motor.co.id/product/fazzio/) — merek Fazzio, tipe Hybrid / Hybrid Neo / Hybrid Lux (urut termurah→termahal)
+ {id:'fazzio',name:'Fazzio',cat:'classy',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012317153856719H48710.png',spec:'Classy \u2022 125cc \u2022 Hybrid Y-Connect',colors:[{name:'Blue White',hex:'#294561',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012317153856719H48710.png'},{name:'Black Red',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315093684262D3348.png'},{name:'Grayceful Pink',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025062114190814455O18634.png'},{name:'Yolo Black',hex:'#ecd78e',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025062114193117991G63536.png'},{name:'Go Purple',hex:'#5e51ab',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231711304860C78501.png'},{name:'Pink Mauve',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315073710159J99507.png'},{name:'Green',hex:'#84937f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315075513962R64993.png'},{name:'White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231508455255U66303.png'},{name:'Greenish Gray',hex:'#afcccf',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png'},{name:'Titan',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315101756736A45457.png'}],variants:[
+   {name:'Hybrid',otr:23040000,colors:[{name:'Blue White',hex:'#294561',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012317153856719H48710.png'},{name:'Black Red',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315093684262D3348.png'},{name:'Grayceful Pink',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025062114190814455O18634.png'},{name:'Yolo Black',hex:'#ecd78e',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025062114193117991G63536.png'}],programs:{'36':{rows:[{dp:1000000,angs:998000},{dp:1600000,angs:972000},{dp:2200000,angs:962000},{dp:2800000,angs:937000},{dp:3300000,angs:916000},{dp:3900000,angs:890000},{dp:6200000,angs:787000}]}}},
+   {name:'Hybrid Neo',otr:24480000,colors:[{name:'Go Purple',hex:'#5e51ab',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231711304860C78501.png'},{name:'Pink Mauve',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315073710159J99507.png'},{name:'Green',hex:'#84937f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315075513962R64993.png'},{name:'White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231508455255U66303.png'}],programs:{'36':{rows:[{dp:1300000,angs:1052000},{dp:1800000,angs:1030000},{dp:2400000,angs:1016000},{dp:3000000,angs:990000},{dp:3700000,angs:961000},{dp:4300000,angs:935000},{dp:6700000,angs:828000}]}}},
+   {name:'Hybrid Lux',otr:26050000,colors:[{name:'Greenish Gray',hex:'#afcccf',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png'},{name:'Titan',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315101756736A45457.png'}],programs:{'36':{rows:[{dp:1500000,angs:1117000},{dp:2100000,angs:1090000},{dp:2700000,angs:1077000},{dp:3400000,angs:1047000},{dp:4000000,angs:1022000},{dp:4700000,angs:992000},{dp:7300000,angs:876000}]}}}
+ ]},
+   // CLASSY — Grand Filano (yamaha-motor.co.id/product/grand-filano/) — merek Grand Filano, tipe Hybrid Neo / Hybrid Lux
+  {id:'grandfilano',name:'Grand Filano',cat:'classy',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231028034876K13777.png',spec:'Classy \u2022 125cc \u2022 Hybrid',colors:[{name:'Royal Iron',hex:'#bfd4f0',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231028034876K13777.png'},{name:'Magma Black',hex:'#2c2324',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310455516358M58371.png'},{name:'Prime Gray',hex:'#afb7c3',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310263681335O86751.png'},{name:'Greenish Gray',hex:'#afcccf',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310255191745O23444.png'},{name:'Pink Mauve',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310255677911L16899.png'},{name:'Essential White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310261915448E14156.png'}],variants:[
+   {name:'Hybrid Neo',otr:30040000,colors:[{name:'Prime Gray',hex:'#afb7c3',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310263681335O86751.png'},{name:'Greenish Gray',hex:'#afcccf',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310255191745O23444.png'},{name:'Pink Mauve',hex:'#cba49f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310255677911L16899.png'},{name:'Essential White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310261915448E14156.png'}],programs:{'35':{rows:[{dp:1500000,angs:1403000},{dp:3000000,angs:1324000},{dp:4400000,angs:1288000},{dp:6200000,angs:1213000},{dp:7900000,angs:1106000},{dp:9100000,angs:1052000},{dp:10600000,angs:994000},{dp:12000000,angs:948000},{dp:13800000,angs:902000}]},'b1g10':{rows:[{dp:3200000,b1x:1582000,dpk:4782000,as:1582000},{dp:3800000,b1x:1548000,dpk:5348000,as:1548000},{dp:4600000,b1x:1503000,dpk:6103000,as:1503000},{dp:5300000,b1x:1458000,dpk:6758000,as:1458000},{dp:6100000,b1x:1436000,dpk:7536000,as:1436000},{dp:6800000,b1x:1402000,dpk:8202000,as:1402000}]}}},
+   {name:'Hybrid Lux',otr:30880000,colors:[{name:'Royal Iron',hex:'#bfd4f0',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231028034876K13777.png'},{name:'Magma Black',hex:'#2c2324',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310455516358M58371.png'}],programs:{'35':{rows:[{dp:1600000,angs:1440000},{dp:3200000,angs:1356000},{dp:4700000,angs:1316000},{dp:6400000,angs:1246000},{dp:7600000,angs:1162000},{dp:9400000,angs:1080000},{dp:10900000,angs:1022000},{dp:12400000,angs:972000},{dp:14200000,angs:908000}]},'b1g10':{rows:[{dp:3300000,b1x:1625000,dpk:4925000,as:1625000},{dp:3900000,b1x:1591000,dpk:5491000,as:1591000},{dp:4700000,b1x:1546000,dpk:6246000,as:1546000},{dp:5500000,b1x:1495000,dpk:6995000,as:1495000},{dp:6200000,b1x:1480000,dpk:7680000,as:1480000},{dp:7000000,b1x:1441000,dpk:8441000,as:1441000}]}}}
+ ]},
+  // MAXi — LEXi LX 155 (yamaha-motor.co.id/product/lexi-lx-155/) — merek LEXi LX 155, tipe Standard → S Version → Connected/ABS (urut termurah→termahal)
+ {id:'lexi',name:'LEXi LX 155',cat:'maxi',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101320057424B70971.png',spec:'MAXi \u2022 155cc \u2022 VVA',colors:[{name:'Matte Green',hex:'#84937f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101320057424B70971.png'},{name:'Metallic Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101322632009E95399.png'},{name:'Sand',hex:'#b5a89b',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101353067003N34382.png'},{name:'Elixir Dark Silver',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101360579143I99099.png'},{name:'Ceramic Grey',hex:'#919191',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601210136411054B75592.png'}],variants:[
+   {name:'Standard',otr:29290000,colors:[{name:'Matte Green',hex:'#84937f',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101320057424B70971.png'},{name:'Metallic Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101322632009E95399.png'}],programs:{'35':{rows:[{dp:1600000,angs:1387000},{dp:2300000,angs:1346000},{dp:3000000,angs:1305000},{dp:4500000,angs:1253000},{dp:6000000,angs:1173000}]}}},
+   {name:'S Version',otr:31150000,colors:[{name:'Sand',hex:'#b5a89b',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101353067003N34382.png'},{name:'Elixir Dark Silver',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012101360579143I99099.png'}],programs:{'35':{rows:[{dp:1800000,angs:1444000},{dp:2500000,angs:1386000},{dp:3300000,angs:1317000},{dp:4900000,angs:1300000},{dp:6400000,angs:1201000}]}}},
+   {name:'Connected/ABS',otr:34190000,colors:[{name:'Ceramic Grey',hex:'#919191',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601210136411054B75592.png'}],programs:{'35':{rows:[{dp:2600000,angs:1636000},{dp:3400000,angs:1569000},{dp:4300000,angs:1481000},{dp:6000000,angs:1463000}]}}}
+ ]},
+   // MAXi — Aerox 155 (yamaha-motor.co.id/product/all-new-aerox155-connected/) — merek Aerox 155, tipe Standard → CyberCity (urut termurah→termahal, sesuai Excel)
+ {id:'aerox155',name:'Aerox 155',cat:'maxi',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023102416264470586E6961.png',spec:'MAXi \u2022 155cc \u2022 Y-Connect',colors:[{name:'Prestige Silver',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280563814D66821.png'},{name:'Maxi Signature',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280299726S94464.png'}],variants:[
+   {name:'Standard',otr:31850000,colors:[{name:'Dull Blue Orange',hex:'#ff8040',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023102416264470586E6961.png'},{name:'Silver Cyan',hex:'#008b8b',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023102416255597157E83827.png'},{name:'Metallic Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202310241625591732N30808.png'},{name:'Black Grey',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023102416263316247N20315.png'}],programs:{'35':{rows:[{dp:3300000,angs:1498000},{dp:5000000,angs:1408000},{dp:6500000,angs:1377000},{dp:7600000,angs:1331000},{dp:8900000,angs:1245000}]},'b1g10':{rows:[{dp:3300000,b1x:1654000,dpk:4954000,as:1654000},{dp:3800000,b1x:1626000,dpk:5426000,as:1626000},{dp:4500000,b1x:1587000,dpk:6087000,as:1587000},{dp:5000000,b1x:1553000,dpk:6553000,as:1553000},{dp:5700000,b1x:1526000,dpk:7226000,as:1526000}]}}},
+   {name:'CyberCity',otr:32050000,colors:[{name:'Cyber City Livery',hex:'#000088',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280991628A58578.png'}],programs:{'35':{rows:[{dp:3300000,angs:1508000},{dp:5000000,angs:1418000},{dp:6500000,angs:1379000},{dp:7600000,angs:1342000},{dp:8900000,angs:1255000}]},'b1g10':{rows:[{dp:3300000,b1x:1666000,dpk:4966000,as:1666000},{dp:3700000,b1x:1643000,dpk:5343000,as:1643000},{dp:4300000,b1x:1610000,dpk:5910000,as:1610000},{dp:4800000,b1x:1575000,dpk:6375000,as:1575000},{dp:5600000,b1x:1543000,dpk:7143000,as:1543000}]}}}
+ ]},
+  // MAXi — Aerox Alpha (yamaha-motor.co.id/product/aerox-alpha/) — urut termurah→termahal: Standard → CyberCity → Turbo Ultimate → Turbo
+ {id:'aerox-a',name:'Aerox Alpha',cat:'maxi',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515082054412B82352.png',spec:'MAXi \u2022 155cc \u2022 VVA Sporty',colors:[{name:'Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515082054412B82352.png'},{name:'Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515061329919C46613.png'},{name:'Blue',hex:'#294561',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515060448745C51316.png'},{name:'Elixir Dark Silver',hex:'#aeadb6',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515050852238N68798.png'},{name:'Matte Blue Red',hex:'#000088',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020516063336640M90207.png'}],variants:[
+   {name:'Standard',otr:33080000,colors:[{name:'Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515082054412B82352.png'},{name:'Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515061329919C46613.png'},{name:'Blue',hex:'#294561',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515060448745C51316.png'}],programs:{'35':{rows:[{dp:3400000,angs:1555000},{dp:5100000,angs:1465000},{dp:6700000,angs:1422000},{dp:7900000,angs:1380000},{dp:9200000,angs:1293000}]},'b1g10':{rows:[{dp:3400000,b1x:1712000,dpk:5112000,as:1712000},{dp:3900000,b1x:1684000,dpk:5584000,as:1684000},{dp:4500000,b1x:1651000,dpk:6151000,as:1651000},{dp:5000000,b1x:1616000,dpk:6616000,as:1616000},{dp:5800000,b1x:1585000,dpk:7385000,as:1585000},{dp:6400000,b1x:1564000,dpk:7964000,as:1564000}]}}},
+   {name:'CyberCity',otr:33630000,colors:[{name:'Matte Blue Red',hex:'#000088',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020516063336640M90207.png'}],programs:{'35':{rows:[{dp:3500000,angs:1578000},{dp:5200000,angs:1488000},{dp:6800000,angs:1446000},{dp:8000000,angs:1404000},{dp:9300000,angs:1316000}]}}},
+   {name:'Turbo Ultimate',otr:37870000,colors:[{name:'Elixir Dark Silver',hex:'#aeadb6',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515031335833N50491.png'}],programs:{'35':{rows:[{dp:3900000,angs:1772000},{dp:5900000,angs:1666000},{dp:7700000,angs:1619000},{dp:9000000,angs:1574000},{dp:10500000,angs:1474000}]}}},
+   {name:'Turbo',otr:43980000,colors:[{name:'Elixir Dark Silver',hex:'#aeadb6',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026020515050852238N68798.png'}],programs:{'35':{rows:[{dp:4500000,angs:2101000},{dp:6800000,angs:1977000},{dp:8900000,angs:1901000},{dp:10500000,angs:1822000},{dp:12000000,angs:1729000}]},'b1g10':{rows:[{dp:4600000,b1x:2281000,dpk:6881000,as:2281000},{dp:5200000,b1x:2248000,dpk:7448000,as:2248000},{dp:5900000,b1x:2209000,dpk:8109000,as:2209000},{dp:6700000,b1x:2155000,dpk:8855000,as:2155000},{dp:7400000,b1x:2116000,dpk:9516000,as:2116000},{dp:8100000,b1x:2092000,dpk:10192000,as:2092000}]}}}
+ ]},
+  // MAXi — NMAX (yamaha-motor.co.id/product/nmax-turbo/) — merek NMAX, tipe Neo / Neo S / Turbo
+  {id:'nmax-turbo',name:'NMAX',cat:'maxi',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019194058600Y79045.png',spec:'MAXi \u2022 155cc \u2022 YECVT Turbo \u2022 Y-Connect',colors:[{name:'Matte Blue',hex:'#1f3e65',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019194058600Y79045.png'},{name:'Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202408190917345976S21101.png'},{name:'White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202408190917393908H14301.png'},{name:'Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024081909174815666G66711.png'},{name:'Ceramic Grey',hex:'#999999',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019120360785H74074.png'},{name:'Elixir Dark Silver',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019182433784K7647.png'}],variants:[
+   {name:'Neo',otr:36970000,colors:[{name:'Matte Blue',hex:'#1f3e65',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019202062H52051.png'},{name:'Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024061119274974993S52769.png'},{name:'White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024061119281348784W8996.png'},{name:'Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024061119274037676S53246.png'}],programs:{'35':{rows:[{dp:4100000,angs:1782000},{dp:5600000,angs:1712000},{dp:7300000,angs:1666000},{dp:8500000,angs:1621000},{dp:9800000,angs:1552000}]},'b1g10':{rows:[{dp:4500000,b1x:1899000,dpk:6399000,as:1899000},{dp:5100000,b1x:1866000,dpk:6966000,as:1866000},{dp:5700000,b1x:1837000,dpk:7537000,as:1837000},{dp:6200000,b1x:1811000,dpk:8011000,as:1811000},{dp:6600000,b1x:1795000,dpk:8395000,as:1795000}]}}},
+   {name:'Neo S',otr:38450000,colors:[{name:'Matte Blue',hex:'#1f3e65',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019194058600Y79045.png'},{name:'Red',hex:'#ff0000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202408190917345976S21101.png'},{name:'White',hex:'#ffffff',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202408190917393908H14301.png'},{name:'Black',hex:'#000000',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024081909174815666G66711.png'}],programs:{'35':{rows:[{dp:4200000,angs:1857000},{dp:5900000,angs:1777000},{dp:7600000,angs:1733000},{dp:8900000,angs:1685000},{dp:10200000,angs:1614000}]},'b1g10':{rows:[{dp:4000000,b1x:1985000,dpk:5985000,as:1985000},{dp:4700000,b1x:1946000,dpk:6646000,as:1946000},{dp:5200000,b1x:1923000,dpk:7123000,as:1923000},{dp:5700000,b1x:1897000,dpk:7597000,as:1897000},{dp:6100000,b1x:1881000,dpk:7981000,as:1881000},{dp:6700000,b1x:1861000,dpk:8561000,as:1861000}]}}},
+   {name:'Turbo',otr:42560000,colors:[{name:'Ceramic Grey',hex:'#999999',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019120360785H74074.png'},{name:'Elixir Dark Silver',hex:'#c9c9cd',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025111019182433784K7647.png'}],programs:{'35':{rows:[{dp:4700000,angs:2054000},{dp:6500000,angs:1971000},{dp:8400000,angs:1920000},{dp:9800000,angs:1867000},{dp:11200000,angs:1792000}]},'b1g10':{rows:[{dp:4500000,b1x:2177000,dpk:6677000,as:2177000},{dp:5200000,b1x:2139000,dpk:7339000,as:2139000},{dp:5700000,b1x:2117000,dpk:7817000,as:2117000},{dp:6200000,b1x:2091000,dpk:8291000,as:2091000},{dp:6800000,b1x:2065000,dpk:8865000,as:2065000},{dp:7400000,b1x:2047000,dpk:9447000,as:2047000}]}}}
+ ]},
+   // MOPED — MX King 150 (yamaha-motor.co.id/product/mx-king-150/ + Excel Harga Cash/Cicilan 11-35) — hanya 3 warna Standard, livery beda harga tidak dimasukkan
+  {id:'mx-king',name:'MX King 150',cat:'moped',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815501128784Y48788.png',spec:'Moped \u2022 150cc \u2022 VVA \u2022 5-Speed',colors:[{name:'Blue',hex:'#000088',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815501128784Y48788.png'},{name:'CyberCity',hex:'#5e51ab',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815502299713A93187.png'},{name:'Silver',hex:'#999999',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815502963133Z5037.png'}],variants:[
+   {name:'Standard',otr:30590000,colors:[{name:'Blue',hex:'#000088',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815501128784Y48788.png'},{name:'CyberCity',hex:'#5e51ab',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815502299713A93187.png'},{name:'Silver',hex:'#999999',img:'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815502963133Z5037.png'}],programs:{'reg':{label:'Cicilan 11-35 Bulan',tenor:[11,17,23,29,35],rows:[
+      {dp:4700000,a11:3292000,a17:2356000,a23:1866000,a29:1617000,a35:1515000},
+      {dp:5100000,a11:3244000,a17:2322000,a23:1839000,a29:1594000,a35:1493000},
+      {dp:5700000,a11:3199000,a17:2270000,a23:1816000,a29:1568000,a35:1462000},
+      {dp:6300000,a11:3133000,a17:2226000,a23:1781000,a29:1536000,a35:1422000},
+      {dp:6900000,a11:3073000,a17:2188000,a23:1768000,a29:1515000,a35:1390000},
+      {dp:7600000,a11:2974000,a17:2128000,a23:1723000,a29:1491000,a35:1363000},
+      {dp:8200000,a11:2926000,a17:2102000,a23:1699000,a29:1476000,a35:1346000},
+      {dp:8800000,a11:2803000,a17:1986000,a23:1624000,a29:1384000,a35:1283000},
+      {dp:9400000,a11:2718000,a17:1923000,a23:1533000,a29:1362000,a35:1252000},
+      {dp:10100000,a11:2622000,a17:1876000,a23:1489000,a29:1337000,a35:1216000}
+   ]}}}
+ ]}
+];
+const CATS=[{id:'matic',name:'Matic Yamaha',desc:'Gesit, irit, andal',logo:''},{id:'classy',name:'Classy Yamaha',desc:'Gaya modern klasik',logo:BASE+'/web_new/products/image/Logo Classy Web.png'},{id:'maxi',name:'MAXi Yamaha',desc:'Skutik premium performa maksimal',logo:BASE+'/web_new/products/image/Logo Maxi Web.png'},{id:'moped',name:'Moped Yamaha',desc:'Bebek sport bertenaga',logo:''}];
+const PROG_LABEL={'36':'Hemat 36 Bulan','35':'Hemat 35 Bulan','b1g10':'Bayar 1 Gratis 10','reg':'Cicilan 11-35 Bulan'};
+const PROG_DESC={'36':'Cicilan tetap selama <b>36 bulan (3 tahun)</b> dengan angsuran paling ringan per bulan. Cocok buat kamu yang mau bayar santai jangka panjang.','35':'Cicilan tetap selama <b>35 bulan</b> dengan pilihan DP fleksibel — <b>makin besar DP, makin kecil angsuran</b> bulanannya. Cocok untuk motor kelas menengah-atas.','b1g10':'<b>Bayar DP + 1x angsuran di awal</b>, sisanya tinggal dicicil <b>24 bulan aja</b> (bukan 35/36 bulan). Total masa cicilan jadi lebih pendek dan lebih cepat lunas.','reg':'Cicilan fleksibel <b>11 / 17 / 23 / 29 / 35 bulan</b> — pilih tenor sesuai budget. Makin lama tenor, makin ringan angsuran.'};
+let activeCat='all',activeProg='all';
+function fmt(n){return 'Rp '+n.toLocaleString('id-ID')}
+function onHeadSearch(q){activeSearch=(q||'').toLowerCase().trim();render();}
+let activeSearch='';
+function hasProg(m,p){return m.variants.some(v=>v.programs[p])}
+function filterCat(cat,btn){activeCat=cat;document.querySelectorAll('.cat-icon-row button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render()}
+function filterProg(p,btn){activeProg=p;document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');render()}
+function render(){
+ const wrap=document.getElementById('wrap');wrap.innerHTML='';
+ CATS.forEach(c=>{
+  const models=MODELS.filter(m=>m.cat===c.id && (activeCat==='all'||m.cat===activeCat) && (activeProg==='all'||hasProg(m,activeProg)) && (!activeSearch || m.name.toLowerCase().includes(activeSearch) || m.spec.toLowerCase().includes(activeSearch))).sort((a,b)=> Math.min(...a.variants.map(v=>v.otr)) - Math.min(...b.variants.map(v=>v.otr)));
+  if(!models.length) return;
+  let html=`<div class="cat-head">${c.logo?`<img src="${c.logo}" alt="${c.name}">`:''}<h2>${c.name}<span>${c.desc} • ${models.length} model</span></h2></div><div class="divider"></div><div class="grid">`;
+   models.forEach(m=>{
+    const minOTR=Math.min(...m.variants.map(v=>v.otr));
+    const otrLabel=m.variants.length>1?'Harga Cash Sumbar - Padang, Mulai Dari':'Harga Cash Sumbar - Padang';
+    const progs=[...new Set(m.variants.flatMap(v=>Object.keys(v.programs).filter(k=>v.programs[k])) )];
+     let minDP=null,minAng=null;
+     m.variants.forEach(v=>{Object.values(v.programs).forEach(pg=>{if(!pg||!pg.rows) return; pg.rows.forEach(r=>{const dp=r.dpk||r.dp; const an=r.as||r.angs||r.a35||r.a29||r.a23||r.a17||r.a11; if(dp!=null && (minDP===null||dp<minDP)){minDP=dp;minAng=an}})})});
+     const dpHtml = (minDP!=null && minAng!=null) ? `<div class="card__dp-item"><div class="card__dp-label">DP Mulai dari</div><div class="card__dp-value">${fmt(minDP)}</div></div><div class="card__dp-item"><div class="card__dp-label">Angsuran / bulan</div><div class="card__dp-value">${fmt(minAng)}<span>/bln</span></div></div>` : `<div class="card__dp-item" style="grid-column:1/-1"><div class="card__dp-label">Info</div><div class="card__dp-value" style="font-size:11px">Hubungi Dealer</div></div>`;
+     const colorHtml = (m.colors&&m.colors.length) ? `<div class="color-dots">${m.colors.map((c,ci)=>`<span class="color-dot${c.hex.toLowerCase()==='#ffffff'?' light':''}${ci===0?' active':''}" style="background:${c.hex}" title="${c.name}" onclick="event.stopPropagation();pickCardColor('${m.id}',${ci})"></span>`).join('')}</div>` : '';
+     html+=`<div class="card">
+     <div class="card__img"><span class="badge-cat badge-${m.cat}">${m.cat.toUpperCase()}</span><img id="card-img-${m.id}" src="${m.img}" alt="${m.name}" loading="lazy"></div>
+     <div class="card__body">
+      <div class="card__name">${m.name}</div>
+      <div class="card__spec">${m.spec}</div>
+      ${colorHtml}
+      <div class="card__price">${fmt(minOTR)}</div>
+      <div class="card__meta">${progs.length?progs.map(p=>`<span class="pill hot">${PROG_LABEL[p]||p}</span>`).join(''):`<span class="pill">Hubungi Dealer</span>`}</div>
+       <div class="card__dp">${dpHtml}</div>
+       <div class="card__foot"><button class="btn-details" onclick="openDetail('${m.id}')">Details</button></div>
+     </div>
+    </div>`;
+  });
+  html+=`</div>`;
+  wrap.insertAdjacentHTML('beforeend',html);
+ });
+ if(!wrap.innerHTML) wrap.innerHTML=`<div class="empty">Tidak ada produk untuk filter ini.</div>`;
+}
+function openDetail(id){
+ const m=MODELS.find(x=>x.id===id); if(!m) return;
+ // urut tipe dari standard/murah → mahal biar detail konsisten
+ const sorted=[...m.variants].sort((a,b)=>a.otr-b.otr);
+ _activeModel={...m,variants:sorted};
+ const vm=sorted;
+ document.getElementById('mTitle').textContent=m.name;
+ let h=`<div class="vtabs">`+vm.map((v,i)=>`<button class="vtab ${i===0?'active':''}" onclick="switchV(this,${i})">${v.name}<small>${fmt(v.otr)}</small></button>`).join('')+`</div>`;
+  vm.forEach((v,i)=>{
+   const vColors = v.colors || m.colors || [];
+   const firstImg = (vColors[0] && vColors[0].img) ? vColors[0].img : m.img;
+   const colorModalHtml = vColors.length ? `<div class="color-modal-row">${vColors.map((c,ci)=>`<span class="color-modal-item${ci===0?' active':''}" onclick="pickModalColor(${i},${ci})"><i style="background:${c.hex}"></i>${c.name}</span>`).join('')}</div>` : '';
+     h+=`<div class="vpane ${i===0?'active':''}" data-vi="${i}">
+      <div class="vhead"><img id="modal-img-${i}" src="${firstImg}" alt="${m.name}"><div><div style="font-weight:800;color:#0e2a63">${m.name} — ${v.name}</div><div style="font-size:12px;color:#6b7280;margin-top:8px">${m.spec}</div>${colorModalHtml}<div style="font-size:10px;font-weight:800;color:#0e2a63;background:#ffe600;display:inline-block;padding:3px 8px;border-radius:999px;margin-top:8px;letter-spacing:.3px">✅ Cukup Foto KTP dan KK</div><div class="pricebox" style="margin-top:8px"><b>${fmt(v.otr)}</b></div><a href="https://wa.me/6289629925568?text=Halo%20Yamaha%20Andalas%20mau%20klaim%20PROMO%20HANYA%20DISINI%20${encodeURIComponent(m.name+' '+v.name)}%20${fmt(v.otr)}%20cukup%20foto%20KTP%20dan%20KK" target="_blank" class="wa-claim" style="margin-top:8px;display:inline-flex">🎁 Klaim Promo — Foto KTP dan KK — ${m.name} ${v.name}</a></div></div>`;
+   const keys=Object.keys(v.programs).filter(k=>v.programs[k]);
+   if(keys.length){
+    h+=`<div class="ptabs">`+keys.map((k,idx)=>`<button class="ptab ${idx===0?'active':''}" onclick="switchP(this)">${PROG_LABEL[k]||k}</button>`).join('')+`</div>`;
+     keys.forEach((k,idx)=>{
+      const pg=v.programs[k];
+      const desc = PROG_DESC[k] || '';
+      h+=`<div class="ppane ${idx===0?'active':''}">${desc?`<div class="prog-explain">${desc}</div>`:''}`;
+      if(k==='36'||k==='35'){
+       h+=`<div class="tbl-wrap"><table class="tbl"><thead><tr><th>DP Bayar</th><th>Angsuran / Bulan</th><th>Tenor</th></tr></thead><tbody>`+pg.rows.map(r=>`<tr><td>${fmt(r.dp)}</td><td class="hl">${fmt(r.angs)}</td><td>${k} bln</td></tr>`).join('')+`</tbody></table></div><div class="note">* Simulasi cicilan — DP ringan, angsuran tetap.</div>`;
+      } else if(k==='reg'){
+       h+=`<div class="tbl-wrap"><table class="tbl"><thead><tr><th>DP</th><th>11 bln</th><th>17 bln</th><th>23 bln</th><th>29 bln</th><th>35 bln</th></tr></thead><tbody>`+pg.rows.map(r=>`<tr><td>${fmt(r.dp)}</td><td class="hl">${fmt(r.a11)}</td><td>${fmt(r.a17)}</td><td>${fmt(r.a23)}</td><td>${fmt(r.a29)}</td><td class="hl">${fmt(r.a35)}</td></tr>`).join('')+`</tbody></table></div><div class="note">* Harga Cash ${fmt(v.otr)} — pilih tenor 11-35 bulan. Makin lama tenor makin ringan. * ${pg.label||''}</div>`;
+      } else {
+       h+=`<div class="tbl-wrap"><table class="tbl"><thead><tr><th>DP Gross</th><th>Bayar 1X</th><th>BAYAR KONSUMEN</th><th>Angsuran Sisa (24x)</th></tr></thead><tbody>`+pg.rows.map(r=>`<tr><td>${fmt(r.dp)}</td><td class="hl">${fmt(r.b1x)}</td><td>${fmt(r.dpk)}</td><td class="hl">${fmt(r.as)}</td></tr>`).join('')+`</tbody></table></div><div class="note">* Bayar DP + 1x di awal, sisa cicilan 24 bulan — lebih cepat lunas. 1x di awal setara 10 bulan.</div>`;
+      }
+     h+=`</div>`;
+    });
+  } else {
+   h+=`<div class="empty">Belum ada program cicilan untuk varian ini — hubungi dealer untuk promo terbaru.</div>`;
+  }
+  h+=`</div>`;
+ });
+ document.getElementById('mBody').innerHTML=h;
+ document.getElementById('overlay').classList.add('show');document.body.style.overflow='hidden';
+}
+let _activeModel=null;
+function pickCardColor(id,ci){
+  const m=MODELS.find(x=>x.id===id); if(!m||!m.colors||!m.colors[ci]) return;
+  const c=m.colors[ci]; const imgEl=document.getElementById('card-img-'+id);
+  if(imgEl&&c.img) imgEl.src=c.img;
+  const card=imgEl?imgEl.closest('.card'):null;
+  if(card) card.querySelectorAll('.color-dot').forEach((d,idx)=>d.classList.toggle('active',idx===ci));
+}
+function pickModalColor(vi,ci){
+  if(!_activeModel) return;
+  const v=_activeModel.variants[vi]; const colors=(v.colors||_activeModel.colors||[]); const c=colors[ci]; if(!c) return;
+  const imgEl=document.getElementById('modal-img-'+vi);
+  if(imgEl&&c.img) imgEl.src=c.img;
+  const pane=document.querySelector(`.vpane[data-vi="${vi}"]`);
+  if(pane) pane.querySelectorAll('.color-modal-item').forEach((el,idx)=>el.classList.toggle('active',idx===ci));
+}
+function closeModal(){document.getElementById('overlay').classList.remove('show');document.body.style.overflow=''}
+function switchV(btn,i){const b=btn.closest('.modal__body');b.querySelectorAll('.vtab').forEach(x=>x.classList.remove('active'));b.querySelectorAll('.vpane').forEach(x=>x.classList.remove('active'));btn.classList.add('active');b.querySelector(`.vpane[data-vi="${i}"]`).classList.add('active')}
+function switchP(btn){const pane=btn.closest('.vpane');pane.querySelectorAll('.ptab').forEach(x=>x.classList.remove('active'));pane.querySelectorAll('.ppane').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const idx=[...btn.parentElement.children].indexOf(btn);pane.querySelectorAll('.ppane')[idx].classList.add('active')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+render();
+</script>
+</body>
+</html>
